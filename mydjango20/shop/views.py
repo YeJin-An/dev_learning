@@ -4,13 +4,19 @@ from shop.models import Shop
 from shop.forms import ShopForm
 
 def shop_list(request:HttpRequest) -> HttpResponse:
-    list = Shop.objects.all().order_by("")
+    category_qs = Category.objects.all()
+    list = Shop.objects.all()  # .order_by("")
+
+    category_id: str = request.GET.get('category_id','')
+    if category_id:
+        list = list.filter(category_name__pk=category_id)
 
     query = request.GET.get("query","")
     if query:
         list = list.filter(name__icintains=query)
     return render(request, 'shop/shop_list.html',{
         'shop_list':list,
+        'category_list':category_qs,
     })
 
 # /shop/100/
