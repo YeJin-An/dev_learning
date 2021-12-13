@@ -1,0 +1,37 @@
+{% extends 'second/layout.html' %}
+
+{% block content %}
+    <form action="" method = "get">
+        <input type="text" name="query" value="{{request.GET.query}}"
+            placeholder = "검색어를 입력해주세요." />
+        <input type="submit" value= '검색' />
+    </form>
+
+<!-- -------------------------------------------------------------------------------------- -->
+
+<!-- 1> ul>li*2    2> div(class(style)) 3> img(img(src,slt,class)) -->
+    <div class="row" style="margin-top: 1em;">
+        {% for second in second_list %}
+        <div class = "col-sm-6 offset_sm_3" style='margin-bottom: 1em;'>
+            <div class="card">
+                <img src="{{second.photo.url}}" 
+                    alt="{{second.title}}"
+                    class = "card-img-top">
+                <div claa = "card_body">
+                    <h5 class = "card-title">{{second.title}}</h5>
+                    {{second.content|truncatewords:2}}
+                    <a href="{% url 'second:second_detail' second.pk %}" 
+                    class = "btn btn-sm btn-primary">
+                    바로 가기
+                    </a>
+                </div>
+            </div>
+        </div>     
+    {% endfor %}
+    </div>
+
+    <a href="{% url 'second:post_new' %}"
+            class = "btn btn-primary"> 가자</a>
+
+{% endblock %}
+<!-- -------------------------------------------------------------------------------------- -->
