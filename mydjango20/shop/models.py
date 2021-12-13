@@ -19,7 +19,7 @@ class Category(TimestamedModel):
         ordering = ["-id"]
 
 class Shop(TimestamedModel):
-    Category_name = models.ForeignKey(Category, on_delete = models.CASCADE)
+    Category = models.ForeignKey(Category, on_delete = models.CASCADE)
     name = models.CharField(max_length=100, db_index = True)
     description = models.TextField(blank=True)
     telephone = models.CharField(max_length=14,
