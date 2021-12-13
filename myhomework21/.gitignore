@@ -1,0 +1,7 @@
+.idea
+__pycache__
+db.sqlute3
+media
+.vscode
+.ipynb_checkpoints
+venv
