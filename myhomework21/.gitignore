@@ -1,6 +1,6 @@
 .idea
 __pycache__
-db.sqlute3
+db.sqlite3
 media
 .vscode
 .ipynb_checkpoints
