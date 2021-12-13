@@ -36,6 +36,7 @@ def shop_new(request:HttpRequest) -> HttpResponse:
         # 4)
         if form.is_valid():
             saved_post = form.save()
+            form.extra_save() # 통함하는 방법??
 
             tag_list = []
             tags = form.cleaned_data.get("tag","")
