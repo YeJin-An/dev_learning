@@ -3,6 +3,16 @@ from django.http import HttpRequest, HttpResponse
 from shop.models import Shop
 from shop.forms import ShopForm
 
+def shop_list(request:HttpRequest) -> HttpResponse:
+    list = Shop.objects.all().order_by("")
+
+    query = request.GET.get("query","")
+    if query:
+        list = list.filter(name__icintains=query)
+    return render(request, 'shop/shop_list.html',{
+        'shop_list':list,
+    })
+
 # /shop/100/
 def shop_detail(request:HttpRequest, pk:int) -> HttpResponse:
     shop = get_object_or_404(Shop, pk=pk)

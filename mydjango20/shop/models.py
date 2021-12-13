@@ -15,6 +15,9 @@ class Category(TimestamedModel):
     def __str__(self) -> str:
         return self.name
 
+    class Meta:
+        ordering = ["-id"]
+
 class Shop(TimestamedModel):
     Category_name = models.ForeignKey(Category, on_delete = models.CASCADE)
     name = models.CharField(max_length=100, db_index = True)
@@ -29,11 +32,16 @@ class Shop(TimestamedModel):
     def __str__(self) -> str:
         return self.name
 
+    class Meta:
+        ordering = ["-id"]
 
 class Review(TimestamedModel):
     shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
     author_name = models.CharField(max_length=20)
     message = models.TextField()
+
+    class Meta:
+        ordering = ["-id"]
 
 class Tag(TimestamedModel):
     name = models.CharField(max_length=100, unique=True)
@@ -41,3 +49,5 @@ class Tag(TimestamedModel):
     def __str__(self) -> str:
         return self.name
 
+    class Meta:
+        ordering = ["name"]
