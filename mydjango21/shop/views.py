@@ -52,3 +52,5 @@ def shop_edit(request:HttpRequest)-> HttpResponse:
     return render(request,"shop/shop_new.html",{
         'form':form,
     })
+
+    
