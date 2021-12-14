@@ -55,9 +55,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-if MIDDLEWARE = [
-     "debug_toolbar.middleware.DebugToolbarMiddleware",
-] + MIDDLEWARE
+if DEBUG:
+    MIDDLEWARE = [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+    ] + MIDDLEWARE
 
 ROOT_URLCONF = 'mydjango.urls'
 
