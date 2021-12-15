@@ -20,10 +20,35 @@ def post_detail(request:HttpRequest, pk:int)-> HttpResponse:
     })
 
 def post_new(request:HttpRequest) ->HttpResponse:
-    pass
+    # request.method # "GET" , "POST"
+
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            saved_post = form.save()
+            messages. success(request, "새로운 포스팅을 저장했습니다.")
+            return redirect('blog:post_detail', saved_post.pk) # 이동
+    else:
+        form = PostForm()
+    return render(request, "blog/post_form.html", {
+        "form":form,
+    })
+    
 
 def post_edit(request:HttpRequest, pk:int)->HttpResponse:
-    pass
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES), instance = post
+        if form.is_valid():
+            saved_post = form.save()
+            messages.success(request, f"#{pk} 새로운 포스팅을 저장했습니다.")
+            return redirect('blog:post_detail', saved_post.pk) # 이동
+    else:
+        form = PostForm(instance=post)
+    return render(request, "blog/post_form.html", {
+        "form":form,
+    })
+
 
 def post_delete(request:HttpRequest, pk:int)->HttpResponse:
-    pass
+    raise NotImpleamentedError("삭제는 아직 강의에서 다루지 않았습니다.")
