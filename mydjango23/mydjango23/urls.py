@@ -11,6 +11,7 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls')),
 ]
 
 # static의 반환값은 리스트!!
