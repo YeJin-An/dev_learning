@@ -1,8 +1,22 @@
 {% extends "blog/layout.html" %} {% block content %}
+    <h2> Post List </h2>
 
-<forms action="" , method="post">
-  <table>
-    {{post.as_table}}
-  </table>
-</forms>
+    <table>
+        <thead>
+            {% for post in post_list %}
+                <tr>
+                    <td>
+                        <a href = "{% url "blog:post_detail" post.pk %}">
+                            {{post.title}}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </thead>
+    </table>
+
+    <hr />
+    <a href = "{% url "blog:post_new" %}">
+    포스팅 쓰기
+    </a>
 {% endblock %}
