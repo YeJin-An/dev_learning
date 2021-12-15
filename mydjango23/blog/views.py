@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpRequest, HttpResponse
-from django.contrib.messages import messages
+from django.contrib import messages
 
 from blog.models import Post
 from blog.forms import PostForm
@@ -14,9 +14,9 @@ def post_list(request:HttpRequest)-> HttpResponse:
     })
 
 def post_detail(request:HttpRequest, pk:int)-> HttpResponse:
-    post = post_get_object_or_404(Post, pk=pk)
+    post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html',{
-
+        "post":post,
     })
 
 def post_new(request:HttpRequest) ->HttpResponse:
@@ -38,7 +38,7 @@ def post_new(request:HttpRequest) ->HttpResponse:
 def post_edit(request:HttpRequest, pk:int)->HttpResponse:
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, request.FILES), instance = post
+        form = PostForm(request.POST, request.FILES, instance = post)
         if form.is_valid():
             saved_post = form.save()
             messages.success(request, f"#{pk} 새로운 포스팅을 저장했습니다.")
