@@ -11,6 +11,16 @@
 
     <h>누구누구의 페이지</h1>
 
+    <ul>
+        {% if not user.is_authenricated  %}
+            <li><a href = '{% url 'accounts:login' %}'></a>로그인</li>
+            <li><a href = '{% url 'accounts:singup' %}'></a>회원가입</li>
+        {% else %}
+            <li><a href = '{% url 'accounts:profile' %}'></a>프로필</li>
+            <li><a href = '{% url 'accounts:logout' %}'></a>로그아웃</li>
+        {% endif %}
+    </ul>
+
     {% block content %}{% endblock %}
 
     <hr />
