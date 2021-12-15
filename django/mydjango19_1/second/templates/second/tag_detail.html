@@ -1,0 +1,14 @@
+{% extends 'second/layout.html' %}
+
+{% block content %}
+    <h2>{{tag_name}}</h2>
+
+    <div>
+        {% for second in second_list %}
+            <div>
+                {{second.tite}}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
