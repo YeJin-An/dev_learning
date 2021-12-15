@@ -1,8 +1,0 @@
-.idea
-__pycache__
-db.sqlite3
-media
-.vscode
-migrations
-venv
-.ipynb_checkpoints
