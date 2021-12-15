@@ -9,6 +9,7 @@ from myhomerk.settings import DEBUG
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('web/', include(web.urls)),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,
