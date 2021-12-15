@@ -30,6 +30,7 @@ class Post(TimestampledModel):
             ('P',"공개"),   # Published
         ],
         db_index = True,
+        default = 'D', # 이것으로 초기값 설정
     )
 
     def __str__ (self):
