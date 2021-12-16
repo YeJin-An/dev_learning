@@ -12,7 +12,8 @@ def post_list(request:HttpRequest)-> HttpResponse:
     format = request.GET.get("format","")
 
     if format == "xlsx":
-        return HttpResponse("엑셀 응답")
+        tabular_data = Post.get_tabular_data(post_qs, format = "xlsx")
+        return HttpResponse(tabular_data, conent_type = "application/vnd.ms-excel")
 
     # render 파일을 읽고 뭉쳐주는 역활
     return render(request, 'blog/post_list.html',{

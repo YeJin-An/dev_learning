@@ -40,7 +40,26 @@ class Post(TimestampledModel):
     # detail 페이지를 구현하자마자, 즉시 아재 메서드를 구현합니다.
     def get_absolute_url(self)-> str: 
         return reverse('blog:post_detail', args=[self.pk])
-    
+
+    @classmethod
+    def get_xlsx_data(cls, queryset ,format="xisx")-> bytes:
+        dataset = tablib.Dateset()
+        dataset.headers = ["id", "title", "created_at", "updated_at"]
+
+        for post in queryset:
+            dataset.append(
+                [
+                    post.id
+                    post.title
+                    post.created_at.strftime("%Y-%m-%d %H:%M:%S")
+                    post_updated_at.strftime("%Y-%m-%d %H:%M:%S")
+                ]
+            )
+
+        # xlsx_data = dataset.export(format)
+        # return xlsx_data
+        return dataset.export(format)            
+
     class Meta:
         ordering = ['-id']
 
