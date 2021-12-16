@@ -75,3 +75,9 @@ def post_delete(request:HttpRequest, pk:int)->HttpResponse:
     return render (request,"blog/post_confirm_delete.html",{
         "post":post,
     })
+
+    Subscriber_new = CreateView.as_view(
+    models = Subscriber,
+    form_class = SubscriberForm,
+)
+

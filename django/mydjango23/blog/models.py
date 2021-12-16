@@ -81,3 +81,12 @@ class Tag(TimestampledModel):
 
     class Meta:
         ordering = ["name"]
+
+
+class Subscriber(TimestampledModel):
+    phone = models.CharField(
+        max_length=15,
+        validators = [
+            RegexValidator(r"^\d{3,4}-?\d{3,4}-?\d{4}$"),
+        ]
+    )
