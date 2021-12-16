@@ -7,6 +7,11 @@ from blog.forms import PostForm
 
 
 def post_list(request:HttpRequest)-> HttpResponse:
+    print(request.GET)
+    print(request.GET.get("name")) # dict 의 방식
+    print(request.GET["name"])     # dict의 방식
+    request.GET.getlist("name")    # MultiValueDict 에서 지원
+
     post_qs = Post.objects.all()
     # render 파일을 읽고 뭉쳐주는 역활
     return render(request, 'blog/post_list.html',{
