@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm  
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+from PIL import Image
+
 
 def login(request):
     pass
@@ -21,8 +25,14 @@ def signup(request):
 #     template_name = "accounts/signup_form/html",
 # )
 
-def profile(request):
-    pass
+def profile(request:HttpRequest)->HttpResponse:
+    canvas = Image.new("RGBA", (256, 256), (255, 0, 0, 255))
+    # text/image
+
+    response = HttpResponse(content_type = "image/png")
+    canvas.save(response,"PNG")
+
+    return response
 
 def logout(request):
     pass
