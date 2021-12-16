@@ -5,3 +5,4 @@ media
 .vscode
 migrations
 venv
+.ipynb_checkpoints
