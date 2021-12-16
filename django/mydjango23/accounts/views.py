@@ -4,9 +4,12 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from PIL import Image
 
+from Login.views import LoginView
+from django.contrib.auth import views
 
-def login(request):
-    pass
+login = LoginView.as_view(
+    template_name="accounts/login_form.html",
+)
 
 # 새로운 User 인스턴스를 만드는 것.
 def signup(request):
@@ -25,14 +28,10 @@ def signup(request):
 #     template_name = "accounts/signup_form/html",
 # )
 
+@login_required # 로그인이 필요하다는 의미를 가지고 있음.
 def profile(request:HttpRequest)->HttpResponse:
-    canvas = Image.new("RGBA", (256, 256), (255, 0, 0, 255))
-    # text/image
+    return render(request, "blog/profile.html")
 
-    response = HttpResponse(content_type = "image/png")
-    canvas.save(response,"PNG")
-
-    return response
-
-def logout(request):
-    pass
+logout = LogoutView.as_view(
+    next_page = "accounts:login",
+)
