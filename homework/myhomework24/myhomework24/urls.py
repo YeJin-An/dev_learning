@@ -1,16 +1,19 @@
 from django.contrib import admin
-from django.urls import path,incldue
+from django.urls import path, include
 
 from django.conf import settings
 from django.conf.urls.static import static
 
-from mydjango.settings import DEBUG
+from myhomework24.settings import DEBUG
 
 from django.shortcuts import redirect
 
+# def root(request):
+#     return redirect('YeJIn:One_list')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/', include('shop.urls')),
+    path('yejin/', include('YeJin.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,
