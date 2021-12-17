@@ -19,13 +19,13 @@
       <h1>누구누구의 블로그</h1>
 
       <ul>
-        {% IF not user.is_authenticated %}
+        {% if not user.is_authenticated %}
             <li><a href = "{% url "accounts:login" %}">로그인</a></li>
             <li><a href = "{% url "accounts:singup" %}">회원가입</a></li>
         {% else }
             <li><a href = "{% url "accounts:profile" %}">프로필</a></li>
             <li><a href = "{% url "sccounts:logout" %}">로그아웃</a></li>
-        {% endfor %}
+        {% endif %}
       </ul>
     </div>
     {% endblock %}

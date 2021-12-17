@@ -17,7 +17,7 @@ class Category(TimestampedModel):
     class Meta:
         ordering = ["name"]
         verbose_name = "카테고리"
-        verbosr_plural = "카테고리 목록"
+        verbose_name_plural = "카테고리 목록"
 
 
 class Shop(TimestampedModel):
@@ -26,8 +26,8 @@ class Shop(TimestampedModel):
     category = models.ForeignKey(Category, on_delete = models.CASCADE)
     name = models.CharField(max_length = 200,db_index= True)
     description = models.TextField(blank = True)
-    photo = ImageField(upload_to = "", blank = True)
-    tag_set = models.MantToManyField("Tag", blank = True)
+    photo = models.ImageField(upload_to = "", blank = True)
+    tag_set = models.ManyToManyField("Tag", blank = True)
 
     def __str__(self):
         return self.name
@@ -35,10 +35,10 @@ class Shop(TimestampedModel):
     class Meta:
         ordering = ["name"]
         verbose_name = "상점"
-        verbose_plural = "상점 목록"
+        verbose_name_plural = "상점 목록"
 
 class Review(TimestampedModel):
-    shop = models.ForeignKey(SHop, on_delete =models.CASCADE)
+    shop = models.ForeignKey(Shop, on_delete =models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
     message = models.TextField()
 
@@ -48,7 +48,7 @@ class Review(TimestampedModel):
     class Meta:
         ordering = ["-id"]
         verbose_name = "리뷰"
-        verbose_plural = "리뷰 목록"
+        verbose_name_plural = "리뷰 목록"
 
 class Tag(TimestampedModel):
     name = models.CharField(max_length = 100, unique = True)
@@ -59,5 +59,5 @@ class Tag(TimestampedModel):
     class Meta:
         ordering = ["name"]
         verbose_name = "태그"
-        verbose_plural = "태그 목록"
+        verbose_name_plural = "태그 목록"
 
