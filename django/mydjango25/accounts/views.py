@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import CreateView
+from django.views.generic import CreateView, TemplateView
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
 # def singup(request):
 #     pass
@@ -17,9 +18,28 @@ login = LoginView.as_view(
     template_name = "accounts/login_form.html",
 )
 
+'''
+@ login_required
 def profile(request):
-    pass
+    return render(....)
 
-def logout(request):
-    pass
+def profile(request):
+    return render(....)
+profile = login_required(prefile)
+
+login_required == 상속자
+'''
+# TODO: 커스텀 CBV를 만든다면, LoginRequiredMixin를 상속받도록 할 수 있습니다.
+profile = login_required(
+    TemplateView.as_view(
+    template_name = "accounts/profile_form.html",
+    )
+)
+
+
+
+logout = LogoutView.as_view(
+    # next_page = "accounts:login",
+    next_page = "root",
+)
 
