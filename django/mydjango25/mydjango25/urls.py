@@ -11,6 +11,7 @@ from mydjango25.settings import DEBUG
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("shop/", include('shop.urls')),
+    path('accounts/', include('accounts.urls')),
     path('',TemplateView.as_view(template_name = 'root.html'),name = 'root'),
 ]
 
