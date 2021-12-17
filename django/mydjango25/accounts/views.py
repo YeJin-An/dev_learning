@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 
 # def singup(request):
@@ -12,8 +13,9 @@ singup = CreateView.as_view(
     template_name = "accounts/singup_form.html",
 )
 
-def login(request):
-    pass
+login = LoginView.as_view(
+    template_name = "accounts/login_form.html",
+)
 
 def profile(request):
     pass
