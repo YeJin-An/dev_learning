@@ -1,5 +1,10 @@
-from django.views.generic import ListView
-from shop.models import Shop
+from django.views.generic import ListView , DetailView , CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from shop.models import Shop, Review
+from shop.forms import ReviewForm
+from django.urls import reverse, reverse_lazy
+from django.http import HttpResponse
+
 
 class ShopListView(ListView):
     model = Shop
@@ -12,13 +17,13 @@ class ShopListView(ListView):
 shop_list = ShopListView.as_view()
 
 shop_datail = DetailView.as_view(
-    model = Shop,
+    model = Shop
 )
 
-class ReviewCreateView(CreateView):
+class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review
     form_class = ReviewForm
-    success_url = reverse_lazy("shop:shop_list")
+    # success_url = reverse_lazy("shop:shop_list")
 
     # 유효성 검사에 통과한다면
     def form_valid(self, form)->HttpResponse:
@@ -30,9 +35,24 @@ class ReviewCreateView(CreateView):
         review.shop = shop
         review.user = self.request.user
         review.save()
-        
+
         # return. redirect ("shop:shop_detail", shop.pk)
         return redirect(shop)
 
 # TODO: shop detail 로 이동
 review_new = CreateView.as_view()
+
+class ReviewUpdateView(LoginRequiredMixin, ReviewUserCheckMixmin, UpdateView):
+    modle = Review
+    form_class = ReviewForm
+    # success_url = reverse_lazy("shop:shop_list")
+
+    def get_success_url(self):
+        review = self.get_object
+        return resolve_url(review.shop)
+
+    def test_func(self):
+        review = self.get_object()
+        return self.request.user == review.user
+
+review_edit = UpdateView.as_view()

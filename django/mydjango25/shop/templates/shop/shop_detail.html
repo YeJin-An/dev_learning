@@ -14,6 +14,10 @@
 <h3>리뷰</h3>
 <a href="{% url 'shop:review_new' shop.pk %}" class="btn btn-primary">
   {% for review in shop.review_set.all %}
-  <div>{{review.message}} by {{review.user}} at {{review.created_at}}</div>
+  <div>
+    {{review.message}} by {{review.user}} at {{review.created_at}} {% if
+    review.user == request.user %}
+    <a href="{% url 'shop:review_edit' shop.pk review.pk %}"> Edit </a>
+  </div>
   {% empty %} 등록된 리뷰가 없습니다. {% endfor %} {% endblock %}
 </a>
