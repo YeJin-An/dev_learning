@@ -16,3 +16,18 @@ console.log(name,age);
 const { name:otherName } = tom;
 console.log(otherName);
 
+
+const steve = {
+    name: {
+        first: "Steve",
+        last: "Jobs",
+    },
+    age: 10,
+    region : "Daejeon"
+}
+
+const {name: otherName2} = steve;
+console.log(otherName2);
+
+const { name: {first:firstName} } = steve;
+console.log(firstName);
