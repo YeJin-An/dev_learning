@@ -51,3 +51,27 @@ if(false){
 } else{
     alert(4);
 }
+// 2 
+// 이미 요건을 충족해서
+
+if(false){
+    alert(1);
+} else if(false) {
+    alert(2);
+} else if(true) {
+    alert(3);
+} else {
+    alert(4);}
+// 3
+// 요건에 충족이 되면 끝
+
+if(false){
+    alert(1);
+} else if(false){
+    alert(2);
+} else if(false){
+    alert(3);
+} else{
+    alert(4);}
+// 4
+// 요건에 충족이 안 되는 것이 없어서
