@@ -8,7 +8,9 @@ song_array.filter(function(self,like){
     }
 }); 
 
-for (const song of song_array){
+const filtered_song_array = song_array
+.filter((song)=> song.like >= 200_000)
 
-    console.log(song.like, song.artist , song.title);
+for (const song of filtered_song_array){
+    console.log(`${index+1} [${like}] ${title} ${artist}`);
     }

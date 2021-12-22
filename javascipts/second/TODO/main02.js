@@ -2,12 +2,10 @@
 
 const { melon_data: song_array } = require("./melon_data");
 
-song_array.filter(function(self,title){
-    for(song_array.title in '방탄소년단')
-        return self.title
-}); 
+const bts_array = song_array
+.filter(({artist}) => artist === "방탄소년단"); //True False 
 
-for (const song of song_array){
+for (const song of bts_array){
 
     console.log(song.like, song.artist , song.title);
     }
