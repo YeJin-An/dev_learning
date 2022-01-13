@@ -38,7 +38,7 @@ person["name"]; // 객체의 프로퍼티 참조
 
 // 객체의 메소드 참조
 person.fullid();
-person.fullid;
+person.fullid; // 함수 반환
 
 // 메소드를 참조할 때, ()이거 안하면, 프로퍼티 그 자체를 참조
 person.fullid(); // 이거 말하는 것
