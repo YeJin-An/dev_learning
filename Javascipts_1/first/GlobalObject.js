@@ -26,3 +26,7 @@ typeof strObj;
 // 4. String 객체
 // 5. Array 객체
 // 앞으로 이것을 알아볼 것이다.
+
+// 전역객체(global object)
+// 래퍼객체(wrapper object)
+// 표준객체(Standard Object)
