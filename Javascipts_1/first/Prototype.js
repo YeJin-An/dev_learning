@@ -32,3 +32,20 @@ function Dog(color, name,age){
 var myDog = new Dog('흰색','마루',1)
 document.write(myDog.name + myDog.color)
 // 함수 Dog으로 부터 myDog이 받음.
+
+// 객체에 프로퍼티 및 메소드 추가
+function Dog(color, name, age){
+  this.color = color,
+  this.name = name,
+  this.age = age
+}
+var myDog = new Dog("흰생","마루",1);
+myDog.family = "시베리안 허스키";
+myDog.breed = function(){
+  return this.color + "" + this.family;
+}
+document.write(myDog.breed())// color:흰생 시베리안 허스키
+
+// prototype 프로퍼티
+// JS 표준 객체의 프로토타입도 임의로 수정가능하다 오류발생함.
+// 따라서 JS 표준 객체의 프로토타입은 수정해서는 안된다.
