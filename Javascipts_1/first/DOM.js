@@ -21,3 +21,35 @@
 // Document 메소드
 // -> HTML요소와 관련돤 작업을 토와주는 메서드
 // 1. 요소의 선택 2. 요소의 생성 3. 이벤트 핸들러 4. 객체의 선택
+
+// Dom 요소의 선택
+// 1. HTML 태그 이름(tag name)을 이용한 선택
+document.getElementByTagName("...");
+// 2. 아이디(id)를 이용한 선택
+document.getElementById("...");
+// 3. 클래스(class)를 이용한 선택
+document.getElementsByClassName("...");
+// 4. name 속성(attribute)을 이용한 선택
+document.getElementsByName("...");
+// 5. CSS 선택자(selector)를 이용한 선택
+document.querySelectorAll("...");
+// 6. HTML 객체 집합(object collection)을 이용한 선택
+// title를 사용하여 HTML요소를 선택하고 출력하게 하는 것.
+var title = document.title;
+document.write(title);
+
+// DOM 요소의 내용 변경 [ 스타일도 변경가능 ]
+var str = document.getElementById("...")
+str.innerHTML = "이문장으로 바뀌었습니다."
+
+// 속성이름으로 바뀌는 경우
+<h1>이름</h1>
+<a id="link">파일경로</a>
+<button onClick={changeLink}>button</button>
+
+function changeLink(){
+  var link = document.getElementById("link")
+  link.href = "/.../";
+  link.innerHTML = "자바스크립트로 가기"
+}
+// a 태크의 들어갈 주소의 속성을 바뀌도록 해주는 것.
