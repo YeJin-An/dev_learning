@@ -1,0 +1,46 @@
+C언어 표준 입출력 함수
+: 사용자가 프로그램과 대화하기 위해 
+  사용하는 함수는 I/O함수
+
+
+I/O함수의 종류
+1. scanf() 
+원형: int scanf(const char * restrict format, ...)
+-> 사용자로부터 data를 다양한 서식에 맞춰 출력
+-> formatted의 약자
+-> 서식화된 출력을 지원
+-> 서식 지정자(format specifier) 를 통해 직접 지정
+
+변수(variable)의 의미
+: 데이터를 입력 받기 위해 
+  데이터 타입에 해당하는 크기의 메모리를 
+  우선 할당 받아야 함 
+
+&의 기호는 "주소연산자"라고 한다.
+
+서식지정자의 동시 사용 
+scanf("%d %d", &num01, &num02)
+
+// 주의 점 format specifier를 사용할 때,
+    Datatype에 신경을 쓰자
+
+2. printf()
+원형 : int printf(const char * restrict format, ...)
+-> 여러 종류의 data를 다양한 서식에 맞춰 출력
+-> formatted의 약자
+-> 서식화된 출력을 지원
+-> 서식 지정자(format specifier) %d %s %f %o 등등...
+
+이스케이프 시퀀스(escape sequence)
+-> 프린터로 출력할 때만 의미를 가진다.
+
+서식 지정자(format specifier)
+->  %c %s %d %f %o %% 등등 ...
+-> 한 printf()문 안에 여러개의 서식 지정자 사용가능..
+
+출력 필드의 폭 설정
+-> 출력되는 필드의 폭을 직접 설정할 수 있음.
+|%d| , |%7d| , |%+7d| , |%-7d|
+|%f| , |%.1f| , |%7.2f| , |%-7.2f|
+
+
