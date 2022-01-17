@@ -1,0 +1,93 @@
+동적으로 변하는 웹 서비스
+인터페이스(UI), 경험(UX)
+
+?? 웹서비스를 만드는데,
+굳이 react를 사용하는 이유는?
+
+문서 객체 모델
+-> 문서 구조를 트래 형태의 객체
+
+웹 브라우저는 
+돔을 활용하여 개체의 js와 css적용
+
+웹페이지를 보고 웹 페이지를 그리기 때문에
+DOM API
+는 최적화 되어 있지 않는 
+치명적인 문제점이 1가지 존재한다.
+
+그렇기 때문에
+돔을 최소한으로 만들기 위해
+가상 돔으로 활용해 돔 처리과정을 최적화한다.
+
+조화가정(reconciliation)
+-> 추상화한 자바스크립트 객체를 
+    구성하여 사용
+ReactDOM.render()함수를 통해
+돔에서 조화과정을 통해 돔을 업데이트 한다.
+
+따라서 동적 인터페이스를 가진
+웹 서비스라면 리액트를 활용해
+더 좋은 경험을 제공할 수 있다.
+
+<리액트를 다루는 기술>
+-------------------------------------------------
+
+Hook apl
+과거에는 이거 안씀.
+
+Hook은 추상화가 깊어
+내부 동작 원리를 모르는 경우가 많음
+왜냐하면 문제의 원인을 빠르게
+             파악해내기 어려워지기 때문
+============================
+1. 클로저(Closure)기본 개념
+React에서 Hook을 구현하는핵심 원리는
+JS의 클로저(closure)이다.
+// 클로저의 개념은 MDN 공식 문서를 확인
+const [getFoo, setFoo] = useFoo( );
+=============================
+2. UseState( )동작 원리 알아보기
+useFoo()함수의 코드와 거의 동일하다.
+렌더링 할 때, 호출하는 함수와 대응된다고
+생각하면 된다.
+--> return{ useState , render }
+useState(initialValue){
+   let _state = initialValue;}
+--> 배열의 첫 번째 요소는 
+     함수가 아닌 값이어야 하기 때문,
+let _state;
+function useState(initialValue){
+     const state = _state || initialValue
+} 이렇게 바꿔주자.
+function render(Component){
+      return Component(); }
+============================
+3. useEffect( )동작 원리 알아보기
+
+useState() 상태 값의 관리를 위한 Hook
+useEffect() 사이드 이펙트의 수행을 위한 Hook
+
+사용방법
+-> 이펙트 수행을 위한 콜백함수를 첫 번째 인자
+-> 사이드 이펙트를 수행여부를 결정하기 위해
+    비교할 값들의 의존성 배열을 넘겨준다.
+const [count,setCount] = MyReact.useState(1);
+const [title, settitle] = MyReact.useState("Count")
+
+useEffect(()=>{ console.log('Side effect'); }
+                   ,[count,title])
+
+의존성 배열을 저장하는 것은 
+상태 값을 저장하는 것과 마찬가지 원리이기 때문
+-------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
