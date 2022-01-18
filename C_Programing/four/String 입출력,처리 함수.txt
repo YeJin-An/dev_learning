@@ -1,0 +1,93 @@
+문자열 입출력 함수
+
+1. 문자열 입력 함수
+-> fgets() 함수
+: 키보드뿐만 아니라 파일에서도
+  문자열을 입력받을 수 있는 함수.
+**원형
+#include <stdio.h>
+char *fgets(char * restrict s,int n,FILE * restrict stream);
+1. 첫 번째 인수 선언한 배열의 시작 주소를 전달한다.
+2. 두 번째 인수는 문자열의 최대길이를 전달한다.
+3. 마지막 안수는 문자열을 입력받을 스트림을 전달합니다.
+
+2. 문자열 출력 함수
+-> puts() 함수
+: 표준 출력 스트림(stdout)인 모니터에
+  하나의 문자열을 출력하는 함수
+**원형
+int puts(const char*s)
+// puts()함수는 인수로 출력할 
+   문자열을 가리키는 포인터를 전달
+
+-> fputs() 함수
+: 모니터뿐만 아니라 파일을 통해서
+  문자를 출력(저장)할 수 있는 함수
+: 문자열을 출력한 다음 자동으로 출을 바꿔주지 않는다.
+**원형
+#include <stdio.h>
+int fputs(const char * restrict s, FILE * restrict stream);
+1. 출력할 문자열을 가리키는 포인터를 전달한다.
+2. 문자열을 출력할 스트림을 전달한다.
+
+#include <stdio.h>
+int main()void{
+  char str[100];
+
+  fputs("...",stdout);
+  fgets(str, sizeof(str), stdin);
+  puts("입력하신 문자열: ");
+  puts(str);
+  fputs("..",stdout);
+  fputs(str,stdout);
+  return 0;}
+**  puts()함수는 문자열 출력한 후 줄 바꿈을 해줍니다.
+** fputs()함수는 문자열을 출력한 후 줄 바꿈을 하지 않습니다.
+
+--------------------------------------------------------------
+
+문자열 처리함수
+-> 널 문자를 가지는 문자형 배열로 포현되며, 
+   기본 타입에는 포함되지 않습니다.
+-> C언어는 문자열을 처리하기 위한 다양한 함수를 별도로 제공
+
+1. strlen()함수
+**원형
+#include <string.h>
+size_t strlen(const char *s)
+
+2. strcat(), strncat() 함수
+**원형
+#incldue <string.h>
+ char *strcat(char * restrict s1, const char * restrict s2);
+
+#incldue <string.h>
+char *strncat(char * restrict s1, const char * restrict s2, size_t n);
+
+3. strcpy(), strncpy() 함수
+**원형
+#include <string.h>
+char *strcpy(char * restrict s1, const char * restrict s2);
+
+#incldue <string.h>
+char *strncpy(char * restrict s1, const char * restrict s2, size_t n);
+
+4. strcmp(), strncmp() 함수
+**원형
+#incldue <string.h>
+int strcmp(const char *s1, const char *s2);
+
+#include <string.h>
+int strncmp(const char *s1, const char *s2, size_t n);
+
+5. atoi(), atol(), atoll(), atof() 함수
+-> int형 정수로 변환함.
+-> long형 정수로 변환함.
+-> long long형 정수로 변환함.
+-> double형 실수로 변환함.
+
+6. toupper(), tolower() 함수
+**원형
+#include <ctype.h>
+int toupper(int c); //문자열의 모든 영문자를 대문자로 변환함.
+int tolower(int c); //문자열의 모든 영문자를 소문자로 변홤함.

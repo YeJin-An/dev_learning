@@ -1,0 +1,45 @@
+문자 입출력 함수
+
+1. 단일 문자 입력 함수
+-> getchar() 함수
+: 표준입력스트림(stdin)인 키보드 부터
+  하나의 문자를 입력받는 함수
+**getchar() 원형
+# include <stdio.h>
+int getchar(void);
+
+-> fgetc() 함수
+: 표준입력스트림(stdin)인 키보드 부터
+  하나의 문자를 입력 받는 함수
+: 스트림을 인수로 전달하여 직접 지정할 수 있음.
+: 파일을 통해서 문자를 입력받을 수 있음.
+#include <stdio.h>
+int fgetc(FILE *stream);
+
+
+
+2. 단일 문자 출력 함수
+-> putchar() 함수
+: 표준출력스트림(stdout)인 모니터에 
+  하나의 문자를 출력하는 함수
+#include <stdio.h>
+int putchar(int c);
+
+-> fputc() 함수
+: 표준출력스트림(stdout)인 모니터에 
+  하나의 문자를 출력하는 함수
+: 스트림을 인수로 전달하여 직접 지정할 수 있음.
+: 파일을 통해서 문자를 출력(저장)할 수 있음.
+
+#include <stdio.h>
+int fputc(int c, FILE*stream);
+
+#include <stdio.h>
+int main(void){
+  char ch;
+
+  while((ch = getchar()) != 'x'){
+    putchar(ch)
+  }
+  return 0;
+}
