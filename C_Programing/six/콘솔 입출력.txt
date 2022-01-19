@@ -59,4 +59,4 @@ scanf("%c",&ch);
     [ Visual Studio 2015 ]
 --> fflush() 함수가 아닌 
     입력 버퍼를 지우기 위해서
-    getchar() 함수를 이용하여야 한다.
+    getchar() 함수를 이용하자!!
