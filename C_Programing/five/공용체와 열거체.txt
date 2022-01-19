@@ -1,0 +1,53 @@
+공용체와 열거체
+
+1. 공용체(union)
+-> union키워드를 사용하여 선언한다.
+-> 구조체와 같지만 [하나의 메모리 공간을 공유]한 것은
+   구조체와 공용체의 차이점이다.
+-> 한 번에 하나의 멤버 변수밖에 사용할 수 없다.
+
+구조체 -> 메모리 (char, ,short)(int) 8byte
+공용체 -> 메모리 ( [int,short,char]) 4byte
+: 가장 큰 멤버 변수의 크기를 공유함.
+
+1) 공용체는 순서가 규칙적이지 않는다.
+2) 공용체는 다양한 타입의 데이터를 저장할 수 있도록
+            설계된 타입이다.
+3) 공용체는 다양한 크기의 데이터를 저장할 수 있다.
+
+typedef union{
+  unsigned char a;
+  unsigned short b;
+  unsigned int c;
+} SHAREDATA;
+
+int main(void){
+  SHAREDATA var;
+  var.c = 0x12345678;
+  printf(var.a , var.b , var.c);
+  return 0; }
+-> 공용체의 어떤 멤버 변수를 사용하여 저장했는지 별도 저장
+-> 접근할 때에도 [같은 멤버 변수]를 사용해야 합니다.
+
+
+
+2. 열거체(enumerated types)
+-> 새로운 타입을 선언한다.
+-> 해당 타입이 가질 수 있는 정수형 상숫값도
+   같이 [명시 할 수 있는 타입]이다.
+: 프로그램의 [가독성]이 높아지고, 
+  변수가 지니는 값에 [의미]를 부여할 수 있음,
+
+enum Weather {SUNNY=0, CLOUD=10, RAIN=20, SNOW=30};
+int main(void){
+  enum Weather wt;
+  wt = SUNNY;
+
+  switch (wt){
+    case SUNNY:
+    puts("오늘은 햇볕이 쨍쨍!");
+    break; }
+  puts("각각의 열거체에 해당하는 정수값")
+  printf("%d %d %d %d",SUNNY,CLOUd,RAIN,SNOW) }
+-> C언어에서 열거체는 enum키워드를 사용하여 선언한다.
+-> 상수값을 따로 명시하지 않으면 0부터 시작하여 정의된다.

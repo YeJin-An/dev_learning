@@ -1,0 +1,85 @@
+구조체의 활용
+
+1. 함수와 구조체
+-> 전달되는 인수나 반환되는 반환값으로
+   구조체를 사용할 수 있다.
+-> 구조체를 가리키는 포인터나 
+   구조체의 한 멤버 변수만을 사용할 수 있다.
+
+구조체의 멤버 변수를 함수의 인수로 전달하는 예시
+typedef struct{
+  int savings;
+  int loan;
+} PROP;
+
+int main(void){
+  int hong_prop;
+  PROP hong = {10000,40000};
+
+  hong_prop = calcProperty(hong.savings, hong.loan);
+  return 0;
+  // 구조체의 멤버 변수를 함수의 인수로 전달함다. }
+--> 원본 구조체의 복사본을 가지고 작업하여 안전하다.
+
+PROP prop;
+int hong_prop;
+
+prop = initProperty();
+hong_prop = calcProperty(&prop);
+printf(prop.savings, prop.loan, hong_prop);
+--> 함수 내에서 직접 수정할 수 없도록 하는 방법과
+
+
+
+2. 중첩된 구조체
+struct name{
+  char first[30];
+  char last[30]; };
+
+struct friends{
+  struct name friend_name;
+  char address[30];
+  char job[30]; }
+
+int main(void){
+  struct friends hong={
+    {"길동","홍"}
+    "서울시 강남구 역삼동",
+    "학생",
+  }
+}
+printf(hong.address, hong.friend_name.last, hong.job)
+
+
+
+3. 구조체의 크기
+: 멤버 변수들의 크기에 따라 결정이 된다.
+: 구조체 크기는 멤버 변수들의 크기 총합과
+  일치하는 것은 아니다.
+typedef struct{
+  char a;
+  int b;
+  double c;
+} TYPESIZE;
+int main(void){
+  puts("...");
+  printf(sizeof(char), sizeof(int), sizeof(double))
+  // 1 4 8
+  printf(sizeof(TYPESIZE))
+  // 16
+}
+
+
+
+4. 바이트 패팅(byte padding)
+: 구조체를 메모리에 할당할 때,
+  컴파일러는 프로그램의 속도 향상을 위해
+  byte padding이란 규칙을 이용한다.
+: 컴파일러는 메모리의 접근을 쉽게 하기 위해
+  가장 큰 멤버 변수를 기준으로 메모리 크기를 맞추게 된다.
+-> 이것이 패딩 바이트(padding byte)
+// 메모리 접근을 위해 멤버 변수르 기준으로 
+   메모리 크기를 맞추게 된다.
+--> 바이트 큰 것을 중심으로 패딩 바이트를 넣어준다??
+왜냐하면 구조체의 크키는 멤버 변수들의 크기 종합과
+         일치하지 않기 때문이다.
