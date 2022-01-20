@@ -1,0 +1,68 @@
+1. Awk의 기본동작:
+Defailt behavior of Awk
+-> $awk '{print}' emplayee.txt
+2. 주어진 패턴과 일치하는 라인을 인쇄
+Print the lines which match the given pattern
+-> $awk '/manager/{print}' employee.txt 
+3. 행을 필드로 분할
+Splitting a Line into Fields
+-> $awk '{print $1,$4}' employee.txt
+
+
+4. NR장 변수 사용(라인 번호 표시)
+Use of NR built-in variables(Display Line Number)
+$ awk '{print NR,$0}' emplayee.txt
+-> 행 번호와 함께 모든 행을 인쇄한다??
+
+5. Use of NR built-in variables(Display Last Field)
+$ awk '{print $1,$NF}' emplayee.txt
+-> $1번 과 $NF마지막 print   [column]
+
+6. Another use of NR built-in variables
+   (Display Line From 3 to 6)
+$ awk 'NR==3, NR==6 {print NR,$0}' employee.txt
+-> 표시 라인을 { 3 }에서 { 6 }까지 출력을 하는 것..
+
+More Examples
+
+For the given text file:
+1> To print the first item along with the row numver(NR)
+$ awk '{print NR "..." $<number>}' geeksforgeeks.txt
+
+2. To return the second row/item 
+   from geeksforgeeks.txt 
+The question should be:
+-To return the second 
+ column[열]/item[항목] from geeksforgeeks.txt;
+$ awk '{print $2}' geeksforgeeks.txt
+
+3. To print any non empty line of present
+$awk 'NF < 0' geeksforgeeks.txt
+
+4. To find the length of the longest line present in the file:
+$ awk '{if ((length($0) > max ) max = length($0)} 
+  END { print max }' geeksforgeeks.txt
+
+5. To count the lines in a file:
+$ awk 'END {print NR}' geeksforgeeks.txt
+
+6. Printing lines with more than 10 characters:
+10이상의 라인 인쇄:
+
+7. To find/check for any string in any specific column:
+$awk '{if($3 =="B6") print $0;}' geeksforgeeks.txt
+-> 특정 열의 문자열을 찾거나 확인하려면,
+
+8. To print the squares of first numbers from 1 to n say 6:
+'BEGIN {for(i=1; i<=6; i++) print "square of" , i, "is" , i*i; }'
+-> square of 1 is 1
+-> square of 2 is 4
+-> square of 3 is 9
+-> square of 4 is 16
+-> square of 5 os 25
+
+
+
+
+
+
