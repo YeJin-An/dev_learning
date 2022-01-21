@@ -1,0 +1,42 @@
+wk
+-> 데이터를 조작하거나 보고서를 생성하는 데,
+    사용되는 스크립팅 언어
+-> 변수, 숫자함수, 문자열 함수 및 논리 연산자를
+    사용할 수 있다.
+-> 유틸리티
+    : 효과적인 프로그램을 작성할 수 있도록 하는 것
+    : 일치하는 항목이 발견할 때, 취해야 할 조치를
+      정의하는 명령문의 형태
+
+AWK작업:
+1. 파일을 한 줄씩 스캔합니다.
+2. 각 입력 줄을 필드로 분할합니다.
+3. 입력 줄/필드를 패턴과 비교합니다.
+4. 일치하는 줄에서 작업을 수행합니다.
+
+유용:
+1. 데이터 파일 변환
+2. 형식이 지정된 보고서 생성
+
+프로그래밍 구성:
+1. 출력 행 형식 지정
+2. 산술 및 문자열 연산
+3. 조건문 및 루프
+
+
+1. Awk의 기본동작
+2. 주어진 패턴과 일치하는 라인을 인쇄
+3. 행을 필드로 분항
+4. NR장 변수 사용(라인 번호 표시)
+5. Use of NR built-in variables(Display Last Field)
+6. Another use of NR built-in variables
+
+For the given text file:
+1. To print the first item along with the row number(NR)
+2. To return the second row/item
+3. To print amy non empty line of present
+4. To find the length of the longest line present in the file:
+5. To count the lines in a file
+6. Printing lines woth more than 10 characters
+7. To find/check for any string in any specific column
+8. To print the squares of first numbers from 1 to n say 6:

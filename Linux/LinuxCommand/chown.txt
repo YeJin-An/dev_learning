@@ -1,0 +1,75 @@
+[Linux]파일 관리 - chown 파일/디렉토리 소유권 변경
+
+Syntax:
+chown [OPTION]... [OWNER] [:[GROUP]] FILE...
+chown [OPTION]... --reference=RFILE FILE...
+
+Example: To change owner of the file:
+chown owner_name file_name
+
+Note: To view the permissions we use:
+ls -l
+
+Now of i use .../txt in my case,
+to change ownership 
+I will use the following syntax:
+-> chown master file1.txt
+
+where the master is another user in the system
+여기의 mater는 다른 사용자이다 system에서
+
+Assume that if you are user named user1 
+and you want to change ownship to root.
+use "sudo" before syntax.
+
+Options:
+-c : Reports when a file change is made.
+Reports -> 보고하다
+-v : it is used to show the verbose 
+     information for every file processed.
+verbose information : 장황한 정보 of 자세한 정보
+every file : 모든파일
+processed : 가공된 or 처리된.
+
+이것은 사용된다 보여준다 자세한 정보를
+처리된 모든 파일로 부터,
+
+-f : it suppresses most of the error messages.
+When you are not permitted to change group permissions and shows error,
+this option forcefully/silently changes the ownership
+chown :group1 file.txt
+suppresses : 표시하다
+permit : 허용하다
+forcefully : 강제 
+silently   : 자동 
+
+
+Examples:
+
+":" : You can see that the group permissions changed to group form root,
+if you use -v option it will report that.
+We just need add a ":" to change group.
+-> chown master:group greek1
+// 그룹 변경하기 위한 수단이나 도구 ":"
+
+1> To Change group ownership  
+  --> chown :group file.txt
+
+2> To change the owner as well as group:
+as well as : ~ 뿐만 아니라
+  --> chown master:group1 greek1
+
+3> To change the owner form particular ownership only
+particular ownership only : 특정 소유권 만
+Suppose we want to change ownership from master to root 
+where current owner must be master only.
+Suppose : 가정하다
+master only : master 만
+  --> chown --from-master root greek1
+ ** -c , -v , -f , :??
+
+ 4> To change group from a particulat group:
+ chown --from-:group1 root greek1
+
+
+ ********************진행 중**************************

@@ -1,0 +1,71 @@
+chmod [reference][operator][mode] file...
+
+[reference] -> u , g , o , a
+class -> owner , group , others , all
+description(설명)
+-> file's owner 소유자
+-> users who are menbers of
+   the file's group 파일의 그룹
+-> users who are neither the 
+   file's owner nor members of 
+   파일의 소유자 또는 구성원
+   the file's group 파일의 그룹
+-> All three of the above, same as ugo 모두
+
+
+[Operator] -> + , - , =
+-> Adds the specified modes to the
+   specified classes 
+지정된 모드와 지정된 클래스에 추가
+-> Removes the specified modes from 
+   the specified classes
+지정된 모두와 지정된 클래스를 삭제
+-> The modes specifed are to ne made
+   the exact modes for the specified classes
+지정된 클래스를 정확한 모드로 지정한다.
+
+공백이 있는 operator는 command fail한다.
+지정된 클래스로 부터 지우거나 허가받은 권한을 지시한다
+
+r -> Permission to read the file
+권한을 읽기 위한 파일
+w -> Permission to write(or delete)the file
+권한을 쓰거나 삭제하기 위한 파일
+x -> Permission to execute the file, or ,in
+     the case of directory, search it;
+권한을 실행하거나 디렉토리 검색 역활
+
+1> lists the files in the working disrectory in long format
+lists 나열하다
+working dirsctory 작업 디렉토리
+long format 긴 형식 
+
+잗업 디렉토리에 파일을 긴 형식으로 나열한다.
+
+2> The figure below
+figure 피규어 -> 그림
+below 아래
+The figure below -> 아래 그림
+
+The figure below shows an example to use ls-l and its output
+아래 그림은 ls-l사용 예시를 보여주고 출력한다 보여준다.
+
+To make things easy to understand some
+columns and rows are eliminated and extra spaces are added to the
+permissions column to make it easier to reas as shown below
+열과 행을 쉽게 이해하기 위해 제거하고,
+여분의 공간을 열을 쉽게 읽을 수 있도록 권한으로 추가해준다.
+
+그 첫 번째 켤럼의 파일형식을 나타내는 데, 일반 파일인가?
+d는 디렉토리로 나타내고, -는 일반파일로 나타낸다.
+
+3번째 글씨의 파일 타입은 
+소유자의 파일이며, 권한을 가집니다.
+
+Note that when a directory has the x set,
+this takes the special meaning of 
+"permitted to search this directory"
+디렉토리에 x세트에 존재할 때, 
+이것은 특별한 의미를 takes가진다, "권한은 디엑토리 검색" 
+
+
