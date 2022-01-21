@@ -68,8 +68,16 @@ master only : master 만
   --> chown --from-master root greek1
  ** -c , -v , -f , :??
 
- 4> To change group from a particulat group:
- chown --from-:group1 root greek1
+4> To change group from a particulat group:
+  --> chown --from-:group1 root greek1
+: Here, the group of greek1 is changed to root.
+
+5> To copy ownership of one file to another:
+  --> chown --reference=greek1 greek2
+
+6> To change ownership of multiple files:
+multiple : 여러 개
+  --> chown master:group greek2 greek3
 
 
  ********************진행 중**************************
