@@ -1,0 +1,94 @@
+Linux File Hierarchy Structure
+Hierarachy : 위계질서
+
+The Linux File Hierarchy Structure and 
+directory contents in Inix-like operating systems
+Hierarchy Structure : 계층구조
+directory contents : directory 내용
+Unix-like : Unix 계층
+
+-> In the FHS, all files and directories appear 
+under the root directory /,
+even if they are stored on different physical or
+virtual devices
+directories : 전화번호부
+they are stored : 그들은 저장된다.
+
+
+-> Some of these directories only exist on a particular system
+if certain subsystems, such as the X Window system
+are installed
+exist : 존재한다.
+particular : 특별한,특정한
+certain : 확실한
+subsystems : 하위 시스템
+sush as : ~ 같은
+
+
+Most of these directories exist in all UNIX operating systems
+and are generally used in much the same way;
+are generally : 일반적으로 
+much : 무엇의 양을 물어볼때,
+
+however, the descriptions here are
+those used specifically for the FHS and not considered
+authoritative for platforms other than Linux.
+description : 설명
+specifically : 구체적으로
+considered : 고래하다
+authoritative : 권의적인 권의있는 
+
+
+1. /(Root) : Primary hierarchy root and 
+        root directory of the entire file system hierarchy
+
+>Every single file and directory starts from the root directory
+>The only root user has the right to write under this directory
+the right : 권한이 있습니다.
+>/root is the root user's home directory, which is not the same as /
+
+
+2. /bin : Essential command binaries that need to be available in single-
+          user mode; for all users, e.g., cat, ls, cp
+essential : 필수적인
+command : 명령
+binaries : 바이너리
+available : 이용할 수 있는
+single-user mode : 단일 사용자 모드
+
+> Contains binary executables 
+> Common linux commands you need to use in single-user modes
+  are located under this directory.
+> Commands used by all the users of the system
+  are located here e.g. ps, ls, ping, grep, cp
+binary : 2진법의
+common linux commands : 일반 리눅스 명령
+here : 시점, 순간, 여기
+
+3. ./boot : Boot loader files, e.g., kernels, initrd.
+initrd : 제1의
+
+> Kernel inited, vmlinux, grub files are located under /boot
+-> 이 3가지 파일은 /boot 아래에 위치되어 있습니다.
+> Example: initrd.img-2.6.32-24-generic, vmlinuz-2.6.32-24-generic
+-> 예를 들면 이렇게 됩니다.
+
+
+4. /dev:Essential device files,ge.g., /dev/null.
+
+> These include terminal devices, usb, or any device attached to the system
+> Example : /dev/tty1 , /dev/usbmon0
+attached : 첨부되다
+
+
+5. ./etc
+6. ./home
+7. ./lib
+8. ./media
+9. ./mnt
+10. ./opt
+11. ./sbin
+12/ ./srv
+13. ./tmp
+14. ./usr
+15. ./proc
