@@ -24,7 +24,6 @@ $awk 'BEGIN{print "TItLe: Field value 1,2"}{print $1,$2}
   Finished
 ]
 
+
+
 awk [OPTION...] [pattern {action}...] [ARGUMENT...]
-
-********** 진행 중 ***************
-
