@@ -1,4 +1,4 @@
-요구사항 정의(Requiremets)
+1. 요구사항 정의(Requiremets)
 -> 요구사항의 간단한 명제 수준으로 정의
    명세(Specification)를 자세하게 파악하는 작업
 -> 시스템에게 요구하는 사항을 정의하는 단계
@@ -6,7 +6,7 @@
 // Actor[이해당사자], Use case[요구사항의 단위], 
    UseCaseDiagram[그림으로 표현] 
 
-UML을 이용한 요구사항 정의에 필요한 활동(Activity)
+2. UML을 이용한 요구사항 정의에 필요한 활동(Activity)
 -> 액터의 정의
 -> 유스케이스 정의
 -> 유스케이스 패키지 정의
@@ -15,30 +15,53 @@ UML을 이용한 요구사항 정의에 필요한 활동(Activity)
 -> 유스케이스 명세서 작성
 -> 액티비티(Acticity)다이어그램 작성(Optional)
 
-액터(Actor)의 정의
+3. 액터(Actor)의 정의
 -> UML을 이용한 가장 우선적인 모델링이 'Actor'를 뽑아 내는 것.
 -> 시스템을 동작하기 위한 동기부여자 / 시스템과 관계가 있는 타시스템
   1차 액터 => 시스템의 동기부여자 역할에 중요한 의미
   2차 액터 => 시스템과의 Communication을 중심으로 하는 액터
 
-개발범위 결정
+4. 개발범위 결정
+-> 모델링의 이해도를 높인다.
+  - 시스템의 개발 범위 , 사용자 인터페이스 , 타시스템과의 인터페이스 등
 
-유스케이스(Use case)의 정의
+5. 유스케이스(Use case)의 정의
+-> 액처에게 가치 있는 결과를 돌려주는 독립적인 서비스 단위(Service Unit)
+-> 시스템이 제공하는 기능(Function) or 서비스(Service)
+-> 액터가 요구하는 시스템의 기능에 대한 정의(Functional Unit)
+-> 액터가 요구하는 요구사항의 기본적인 단위(Requirement Unit)
+-> 액터와 시스템의 트랜잭션(Transaction)을 보장하는 독립적인 서비스 단위
+-> 시스템이 수행하는 순차적인 활동(Flow of Events) or 시나리오(Scenario)가 
+   내장되어 있는 기능적 단위
+  - 그 내용을 이해할 수 있게 작성하는 것이 원칙이다.
+  - 전무적인 용어를 사용할 경우 부가적으로 설명하는 곳에 
+    충분히 설명을 달아두어야 한다. 
 
-유스케이스(Package)정의
+6. 유스케이스 패키지(Package)정의
+-> 유스케이스를 쉬운 크기로 모델링하기 하는 것을 말한다.
+-> 업무 흐름이나 시스템의 요구사항에 대한 내용을 파악하고,
+   업무의 기능별 패키지를 먼저 정의하고, 유스케이스르 정의하는 것이 효과적이다.
 
-유스케이스 다이어그램(Use Case Diagram)
+7. 유스케이스 다이어그램(Use Case Diagram)
 
-액터와 유스케이스의 관계(Relationship)
+8. 액터와 유스케이스의 관계(Relationship)
+-> 메시지 전달(Message Passing)
+-> 메시지의 방향성
+-> 액터와의 인터페이스(Interface)
+// [원칙] 액터 내부의 일은 전혀 관여하지 않는다. 
 
-유스케이스 구조화(Redefine Use Case)
+9. 유스케이스 구조화(Redefine Use Case)
 
-포함(Include)와 시퀀스(Seauence)
+10. 포함(Include)와 시퀀스(Seauence)
+- '제품 주문' 유스케이스의 시나리오 => 1.2.3.4.5.6 순으로 진행된다.
 
-유스케이스의 크기(Granularity)
+11. 유스케이스의 크기(Granularity)
 
-기능 레벨(Functional Level)의 기준
+12. 기능 레벨(Functional Level)의 기준
 
-유스케이스 명세서(Specification)작성
+13. 유스케이스 명세서(Specification)작성
 
-스타일 가이드라인(Style Guideline)
+14. 스타일 가이드라인(Style Guideline)
+
+출처
+https://fermatslasttheorem.tistory.com/entry/UML-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EC%A0%95%EC%9D%98
