@@ -1,0 +1,44 @@
+요구사항 정의(Requiremets)
+-> 요구사항의 간단한 명제 수준으로 정의
+   명세(Specification)를 자세하게 파악하는 작업
+-> 시스템에게 요구하는 사항을 정의하는 단계
+-> '요구사항 명세서', '요구사항 정의서'와 같은 산출물로 정리
+// Actor[이해당사자], Use case[요구사항의 단위], 
+   UseCaseDiagram[그림으로 표현] 
+
+UML을 이용한 요구사항 정의에 필요한 활동(Activity)
+-> 액터의 정의
+-> 유스케이스 정의
+-> 유스케이스 패키지 정의
+-> 유스케이스 다이어그램 작성
+-> 유스케이스 구조화
+-> 유스케이스 명세서 작성
+-> 액티비티(Acticity)다이어그램 작성(Optional)
+
+액터(Actor)의 정의
+-> UML을 이용한 가장 우선적인 모델링이 'Actor'를 뽑아 내는 것.
+-> 시스템을 동작하기 위한 동기부여자 / 시스템과 관계가 있는 타시스템
+  1차 액터 => 시스템의 동기부여자 역할에 중요한 의미
+  2차 액터 => 시스템과의 Communication을 중심으로 하는 액터
+
+개발범위 결정
+
+유스케이스(Use case)의 정의
+
+유스케이스(Package)정의
+
+유스케이스 다이어그램(Use Case Diagram)
+
+액터와 유스케이스의 관계(Relationship)
+
+유스케이스 구조화(Redefine Use Case)
+
+포함(Include)와 시퀀스(Seauence)
+
+유스케이스의 크기(Granularity)
+
+기능 레벨(Functional Level)의 기준
+
+유스케이스 명세서(Specification)작성
+
+스타일 가이드라인(Style Guideline)
