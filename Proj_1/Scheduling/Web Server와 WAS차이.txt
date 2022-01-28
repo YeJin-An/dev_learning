@@ -1,0 +1,39 @@
+Goal
+- Static Pages와 Dynamic Pages과정을 이해한다.
+- Web Seerver와 WAs의 차이를 이해한다.
+- Web 서비스 구조(Web Service Architecture)에 대해 이해한다.
+
+
+Static Pages와 Dynamic Pages
+1. Static Pages
+2. Dynamic Pages
+
+Web Server와 WAS의 차이
+1. Web Server
+-> Web Server의 개념
+-> Web Server의 기능
+-> Web Server의 예
+
+2. WAS(Web Application Server)
+-> WAS의 개념
+-> WAS의 역할
+-> WAS의 주요 기능
+-> WAS의 예
+
+Web Server와 WAS를 구분하는 이유
+1. Web Server가 필요한 이유?
+2. WAS가 필요한 이유?
+3. 그렇다면 WAS가 Web Server의 기능도 모두 수행하면 되지 않을까?
+
+Web Service Architecture
+1. 다양한 구조를 가질 수 있다.
+2. 3번 구조의 동작과정
+
+DBMS와 MiddleWare의 개념
+1. DBMS(Database Management System)
+2. MiddleWare
+
+출처
+https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html
+
+
