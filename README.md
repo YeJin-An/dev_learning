@@ -5,25 +5,26 @@
 
 - 언어
 
-  - C_Programing
+  - C_Programing : <https://github.com/YeJin-An/love/tree/main/C_Programing>
 
 - command
 
-  - Linux
+  - Linux : <https://github.com/YeJin-An/love/tree/main/Linux>
 
 - web
 
-  - JavaScipts
+  - JavaScipts :<https://github.com/YeJin-An/love/tree/main/javascipts>
 
 - framework
 
-  - Django
+  - Django: <https://github.com/YeJin-An/love/tree/main/django>
+
+- 공자의 한마디
+
+  - oneSpeak: <https://github.com/YeJin-An/love/tree/main/oneSpeak>
 
 - review
 
   - homework
   - JavaScipts_1
   - Django_1
-
-- 철학자의 한마디
-  - Project
